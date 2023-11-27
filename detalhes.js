@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Se a senha não foi digitada, redirecionar para a página de login
     if (!senhaDigitada) {
         alert("Não foi possível completar a operação. Faça login primeiro.");
-        window.location.href = "pagina-de-login.html"; // Substitua pelo caminho real da sua página de login
+        window.location.href = "index.html"; // Substitua pelo caminho real da sua página de login
         return;
     }
 

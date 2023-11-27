@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="escudo.png" sizes="16x16">
+    <title>Atletas Botafogo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jogadores.js" defer></script>
+</head>
+<body>
+     <header class="header">
+        <h1 class="titulo">Atletas do Botafogo em 2023</h1>
+        <a href="index.html"><button id="botao-header">Sair</button></a>
+     </header>
+     <!-- ... Seu código HTML ... -->
+<div id="filtro">
+    <!-- Botões para telas maiores que 768px -->
+    <button id="botaoFeminino" class="button-large">Feminino</button>
+    <button id="botaoMasculino" class="button-large">Masculino</button>
+    <button id="botaoTodos" class="button-large">Todos</button>
+
+    <!-- Select para telas menores ou iguais a 768px -->
+    <select id="seletorGenero" class="select-small">
+        <option value="Elenco">Elenco</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Todos">Todos</option>
+    </select>
+</div>
+
+    <div id="containerDeJogadores"></div>
+    
+</body>
+</html>

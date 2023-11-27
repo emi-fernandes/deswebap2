@@ -44,20 +44,35 @@ document.addEventListener("DOMContentLoaded", function () {
     // Chame a função para obter os detalhes do atleta quando a página carregar
     obterDetalhes();
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     // Verificar se a senha foi digitada
-    const senhaDigitada = localStorage.getItem('senha');
+    const senhaDigitada = localStorage.getItem('BOTAFOGO');
 
-    // Se a senha não foi digitada, redirecionar para a página de login
+    // Se a senha não foi digitada, exibir mensagem e botão para ir para a página de login
     if (!senhaDigitada) {
-        alert("Não foi possível completar a operação. Faça login primeiro.");
-        window.location.href = "index.html"; // Substitua pelo caminho real da sua página de login
-        return;
+        const mensagemErro = document.createElement('p');
+        mensagemErro.textContent = "Não foi possível completar a operação. Faça login primeiro.";
+
+        const botaoIrParaLogin = document.createElement('button');
+        botaoIrParaLogin.textContent = 'Ir para Login';
+        botaoIrParaLogin.addEventListener('click', function () {
+            window.location.href = "index.html"; // Substitua pelo caminho real da sua página de login
+        });
+
+        // Adicionar mensagem de erro e botão à página
+        const detalhesContainer = document.getElementById('containerDeJogadores');
+        detalhesContainer.innerHTML = ''; // Limpar o conteúdo existente
+        detalhesContainer.appendChild(mensagemErro);
+        detalhesContainer.appendChild(botaoIrParaLogin);
+
+        return; // Interromper a execução, pois não há necessidade de carregar os detalhes
     }
 
-    // Se a senha foi digitada, continuar carregando os detalhes
+    // Se a senha foi digitada, continuar carregando os detalhes do atleta
     obterDetalhes();
 });
+
 
 const voltar = () => {
     const sair = document.querySelector('footer');

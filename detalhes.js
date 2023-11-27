@@ -1,21 +1,4 @@
 const detalhesContainer = document.getElementById('sobre');
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Verificar se a senha foi digitada
-    const senhaDigitada = localStorage.getItem('senha');
-
-    // Se a senha não foi digitada, redirecionar para a página de login
-    if (!senhaDigitada) {
-        alert("Não foi possível completar a operação. Faça login primeiro.");
-        window.location.href = "pagina-de-login.html"; // Substitua pelo caminho real da sua página de login
-        return;
-    }
-
-    // Se a senha foi digitada, continuar carregando os detalhes
-    obterDetalhes();
-});
-
-
 // Agora, defina as funções relacionadas aos detalhes do atleta
 const exibirDetalhes = (dados) => {
     const detalhesImagem = document.createElement("img");
@@ -59,6 +42,20 @@ const obterDetalhes = async () => {
 // Adicione o evento DOMContentLoaded
 document.addEventListener("DOMContentLoaded", function () {
     // Chame a função para obter os detalhes do atleta quando a página carregar
+    obterDetalhes();
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Verificar se a senha foi digitada
+    const senhaDigitada = localStorage.getItem('senha');
+
+    // Se a senha não foi digitada, redirecionar para a página de login
+    if (!senhaDigitada) {
+        alert("Não foi possível completar a operação. Faça login primeiro.");
+        window.location.href = "pagina-de-login.html"; // Substitua pelo caminho real da sua página de login
+        return;
+    }
+
+    // Se a senha foi digitada, continuar carregando os detalhes
     obterDetalhes();
 });
 
